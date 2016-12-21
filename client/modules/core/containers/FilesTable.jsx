@@ -1,26 +1,34 @@
 import { useDeps, composeAll, composeWithTracker } from 'mantra-core';
 import React, { Component } from 'react';
+import FileView from '../components/FileView';
 
 class FilesTable extends Component {
-  render() {
+
+  renderFiles() {
     const { files } = this.props;
+    return files.map((file, index) => {
+      // let link = Files.findOne({_id: aFile._id}).link();
+      return (
+        <div key={'file' + index}>
+          <FileView
+            fileName={file.name}
+            fileUrl={'kerem'}
+            fileId={file._id}
+            fileSize={file.size}
+          />
+        </div>
+      );
+    });
+  }
+  render() {
+
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
           <h3 className="panel-title">Files</h3>
         </div>
         <div className="panel-body">
-          {files.length}
-          {/* <table className="table table-striped">
-            <tbody>
-              {files.map((file) => (
-                <FilesTableRow
-                  key={file._id}
-                  file={file}
-                />
-              ))}
-            </tbody>
-          </table> */}
+          {this.renderFiles()}
         </div>
       </div>
     );
