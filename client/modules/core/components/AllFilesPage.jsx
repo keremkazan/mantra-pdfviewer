@@ -1,12 +1,12 @@
 import React from 'react';
-import NewFileForm from '../containers/UploadFile';
+import UploadFileForm from '../containers/UploadFileForm';
 import FilesTable from '../containers/FilesTable';
 
 export default () => {
   return (
     <div className="row">
       <div className="col-md-6">
-        <NewFileForm />
+        <UploadFileForm />
       </div>
       <div className="col-md-6">
         <FilesTable />

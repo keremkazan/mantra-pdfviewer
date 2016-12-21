@@ -1,35 +1,49 @@
 import { useDeps, composeAll, composeWithTracker } from 'mantra-core';
 import React, { Component } from 'react';
-import FileView from '../components/FileView';
+import FileRow from '../components/FileRow';
 
 class FilesTable extends Component {
-
   renderFiles() {
     const { files } = this.props;
-    return files.map((file, index) => {
-      // let link = Files.findOne({_id: aFile._id}).link();
+    return (
+      <ul className="list-group">
+        {files.map((file, index) => {
+          // let link = Files.findOne({_id: aFile._id}).link();
+          return (
+            <li className="list-group-item" key={'file' + index}>
+              <FileRow
+                fileName={file.name}
+                fileId={file._id}
+                fileSize={file.size}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  renderUploadPrompt() {
+    const { files } = this.props;
+    if (files.length == 0) {
       return (
-        <div key={'file' + index}>
-          <FileView
-            fileName={file.name}
-            fileUrl={'kerem'}
-            fileId={file._id}
-            fileSize={file.size}
-          />
+        <div className="panel-body">
+          You have not uploaded any files.
         </div>
       );
-    });
+    } else {
+      return (<div></div>)
+    }
   }
-  render() {
 
+  render() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
           <h3 className="panel-title">Files</h3>
         </div>
-        <div className="panel-body">
-          {this.renderFiles()}
-        </div>
+        {this.renderUploadPrompt()}
+        {this.renderFiles()}
       </div>
     );
   }

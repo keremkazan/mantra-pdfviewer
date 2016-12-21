@@ -5,5 +5,7 @@ export default {
   routes,
   actions,
   load(context) {
+    const { LocalState } = context;
+    LocalState.set('uploader', {});
   }
 };
