@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+     "env": {
+       "MONGO_URL": "mongodb://kerem:kerem@ds141088.mlab.com:41088/pdf"
+     }
+   }
+}

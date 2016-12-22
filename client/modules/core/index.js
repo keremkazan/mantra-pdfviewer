@@ -6,6 +6,9 @@ export default {
   actions,
   load(context) {
     const { LocalState } = context;
+    const { files } = actions;
+    const { resetViewer } = files;
     LocalState.set('uploader', {});
+    resetViewer(context);
   }
 };

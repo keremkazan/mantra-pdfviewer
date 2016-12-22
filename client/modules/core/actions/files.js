@@ -1,4 +1,28 @@
 export default {
+
+  resetViewer({ LocalState }) {
+    LocalState.set('viewer', {
+      curPage: 1,
+    });
+  },
+
+  nextPage({ LocalState }) {
+    const viewer = LocalState.get('viewer');
+    LocalState.set('viewer', {
+      ...viewer,
+      curPage: viewer.curPage + 1,
+    });
+  },
+
+  prevPage({ LocalState }) {
+    const viewer = LocalState.get('viewer');
+    if (viewer.curPage == 1) return;
+    LocalState.set('viewer', {
+      ...viewer,
+      curPage: viewer.curPage - 1,
+    });
+  },
+
   uploadFile({ LocalState, Collections }, e) {
     e.preventDefault();
 

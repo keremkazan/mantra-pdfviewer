@@ -2,7 +2,8 @@
   "name": "pdfViewer",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy pdf.meteorapp.com --settings settings.json"
   },
   "dependencies": {
     "babel-runtime": "6.18.0",

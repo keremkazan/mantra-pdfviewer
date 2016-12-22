@@ -5,3 +5,8 @@ body {
 .upload-btn-wrapper {
   margin-bottom:10px;
 }
+
+.pdf-content {
+  margin: 0 auto;
+  text-align: center;
+}
