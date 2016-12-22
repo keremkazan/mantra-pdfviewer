@@ -6,3 +6,4 @@ Upload and view pdfs online
 - No users/accounts. Everything is public
 - Currently not processing the maximum pages in the PDF
 - Deleting a PDF that you are viewing does not refresh the page
+- Uploading a non-PDF does not trigger a warning
